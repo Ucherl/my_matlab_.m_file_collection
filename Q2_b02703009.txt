@@ -1,0 +1,21 @@
+function output =Q2_b02703009(vec, theta, mode)
+%enter three parameter,a marix, the angle, then either rotate or reflect.
+subplot(211),plot(vec);
+sizematrix = size(vec);
+n = sizematrix(2);
+
+rotationYes = strcmp(mode,'rotate');
+reflectionYes = strcmp(mode,'reflect');
+
+if ( rotationYes == 1 && reflectionYes == 0)
+vec = [cos(theta) -sin(theta);sin(theta) cos(theta)]*vec;
+
+elseif (reflectionYes == 1 && rotationYes == 0)
+vec = [cos(2*theta) sin(2*theta);sin(2*theta) -cos(2*theta)]*vec;
+else
+display('you should enter rotate or reflect');
+end
+
+output = vec;
+subplot(212),plot(output);
+    

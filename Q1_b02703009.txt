@@ -1,0 +1,38 @@
+function output = Q1_b02703009(a,b)
+
+m = size(a);
+n = size(b);
+
+new_row = max(m(1),n(1));
+
+if m(1)< new_row
+    c = zeros([new_row-m(1),m(2)]);
+    a = [a;c];
+end
+
+if n(1)< new_row
+    c = zeros([new_row-n(1),n(2)]);
+    b = [b;c];
+end
+
+m = size(a);
+n = size(b);
+new_col = max(m(2),n(2));
+
+if m(2)< new_col
+    c = zeros([m(1),new_col-m(2)]);
+    a = [a c];   
+end
+
+if n(2)< new_col
+    c = zeros([n(1),new_col-n(2)]);
+    b = [b c];   
+end
+
+output = a+b;
+
+disp(output)
+
+
+
+
